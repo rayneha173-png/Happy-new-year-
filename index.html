@@ -1,103 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Happy New Year</title>
-
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle at top, #111 0%, #000 70%);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    overflow: hidden;
-}
-
-/* Text */
-h1 {
-    margin-top: 40px;
-    font-size: 34px;
-}
-
-h2 {
-    font-weight: normal;
-}
-
-/* Image animation */
-.photo {
-    width: 260px;
-    margin-top: 25px;
-    border-radius: 18px;
-    animation: popSquish 2.5s ease-in-out infinite;
-    box-shadow: 0 0 25px rgba(255,180,0,0.6);
-}
-
-/* Pop + squish */
-@keyframes popSquish {
-    0%   { transform: scale(1); }
-    30%  { transform: scale(1.12, 0.9); }
-    50%  { transform: scale(0.95, 1.08); }
-    70%  { transform: scale(1.05, 0.95); }
-    100% { transform: scale(1); }
-}
-
-/* Firecracker sparks */
-.spark {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: gold;
-    border-radius: 50%;
-    animation: burst 2s linear infinite;
-}
-
-@keyframes burst {
-    0% {
-        transform: translate(0,0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--x), var(--y)) scale(0);
-        opacity: 0;
-    }
-}
-</style>
+    <title>Happy New Year</title>
 </head>
+<body style="text-align:center; background:black; color:white;">
 
-<body>
+    <h1>Happy New Year</h1>
 
-<h1>🎉 Happy New Year 🎉</h1>
-
-<h2>
-Wish you a Happy New Year<br>
-Apko pele Venugopal Iyer
-</h2>
-
-<img src="person.jpg" class="photo" alt="Special Person">
-
-<script>
-/* Generate firecracker sparks */
-function createSpark() {
-    const spark = document.createElement("div");
-    spark.className = "spark";
-
-    const x = (Math.random() * 300 - 150) + "px";
-    const y = (Math.random() * 300 - 150) + "px";
-
-    spark.style.left = "50%";
-    spark.style.top = "55%";
-    spark.style.setProperty("--x", x);
-    spark.style.setProperty("--y", y);
-
-    document.body.appendChild(spark);
-
-    setTimeout(() => spark.remove(), 2000);
-}
-
-setInterval(createSpark, 120);
-</script>
+    <img src="person.jpg" alt="Special Person" style="width:250px;">
 
 </body>
 </html>
